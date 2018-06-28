@@ -5,10 +5,14 @@ class AdsController < ApplicationController
   # GET /ads.json
   def index
     @ads = Ad.all
+    @ads = @ads.where(user_id: current_user)
   end
 
   def homepage
     @ads = Ad.all
+
+    @ads = @ads.where(category_id: params[:category_id]).distinct unless params[:category_id].blank?
+    @ads = @ads.where("LOWER(ads.title) like ?", "%#{params[:search_term].to_s.downcase}%").distinct unless params[:search_term].blank?
   end
 
   # GET /ads/1

@@ -2672,3 +2672,684 @@ Processing by AdsController#homepage as HTML
 Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:16:51 -0300
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (23.5ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (64.4ms)
+  Rendered layouts/_menu.html.erb (4.1ms)
+Completed 200 OK in 569ms (Views: 485.1ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:17:00 -0300
+Processing by AdsController#index as HTML
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.6ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 47ms (Views: 30.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ads/new" for 127.0.0.1 at 2018-06-28 19:17:02 -0300
+Processing by AdsController#new as HTML
+  Rendering ads/new.html.erb within layouts/application
+  [1m[36mCategory Load (11.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/_form.html.erb (71.7ms)
+  Rendered ads/new.html.erb within layouts/application (84.1ms)
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 146ms (Views: 116.5ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-28 19:17:06 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (567.8ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 657ms (Views: 615.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-28 19:21:27 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (280.0ms)
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 504ms (Views: 484.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:21:31 -0300
+Processing by AdsController#index as HTML
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (1.0ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."user_id" IS NULL[0m
+  Rendered ads/index.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 51ms (Views: 34.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:21:33 -0300
+Processing by AdsController#index as HTML
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."user_id" IS NULL[0m
+  Rendered ads/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-28 19:21:45 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 84ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-28 19:21:50 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Zk5HlRc8WRyLSnNXH1pCFIlpmEegzI3JogxIBdhzboVsSjMkqSVEFKPAmc5EdsukwmHha3AjQiC1+QBFbq4IQ==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (61.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2018-06-28 22:21:50.792216"], ["sign_in_count", 2], ["updated_at", "2018-06-28 22:21:50.793349"], ["id", 2]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 269ms (ActiveRecord: 67.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:21:50 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.0ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:22:08 -0300
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."user_id" = 2[0m
+  Rendered ads/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_menu.html.erb (2.9ms)
+Completed 200 OK in 53ms (Views: 45.9ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-28 19:22:16 -0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Pfea+3W3Os+ftBdk+sn5FrHZpqp51Afv0rO+ZdLuYNz1k2rLNW1GFJFdv84dxPeqNpzlB2ZFtVtpaz918knPiQ=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:22:16 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.6ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-28 19:22:16 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-28 19:22:35 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6sTaAcb8CY7nYFY7WUL+bQFgI8MLsMYiv/rVb5nUkStAvp+OiEVypp0x842ki+YtYA/RqJKQR4bu51v63d6Zw==", "user"=>{"email"=>"user1@user.com", "name"=>"User 1", "phonenumber"=>"8888-8888", "address"=>"Rua 8", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@user.com"], ["LIMIT", 1]]
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "phonenumber", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "user1@user.com"], ["encrypted_password", "$2a$11$leSwN/kuF4EygLBJvX5g.uD3OVvbYRHb2gQ7f01p7NEIlLVnz5Xem"], ["name", "User 1"], ["phonenumber", "8888-8888"], ["address", "Rua 8"], ["created_at", "2018-06-28 22:22:35.396194"], ["updated_at", "2018-06-28 22:22:35.396194"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-06-28 22:22:35.419794"], ["last_sign_in_at", "2018-06-28 22:22:35.419794"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-06-28 22:22:35.420523"], ["id", 3]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 162ms (ActiveRecord: 27.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:22:35 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.4ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:22:37 -0300
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."user_id" = 3[0m
+  Rendered ads/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_menu.html.erb (1.9ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ads/new" for 127.0.0.1 at 2018-06-28 19:22:38 -0300
+Processing by AdsController#new as HTML
+  Rendering ads/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/_form.html.erb (27.4ms)
+  Rendered ads/new.html.erb within layouts/application (29.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.4ms)
+Completed 200 OK in 64ms (Views: 56.2ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/ads" for 127.0.0.1 at 2018-06-28 19:23:14 -0300
+Processing by AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DzLmy9a9n+UdswR4qD3EVFStvJtHCulEK9zZeerbohcp2WeABFL/dpghHc/LNu59cUF0uFq7I4sry2KzCJ92CA==", "ad"=>{"title"=>"Calça Jeans 38", "description"=>"Calça jeans escura tamanho 38.", "price"=>"30", "category_id"=>"1", "status"=>"1"}, "commit"=>"Salvar"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (14.3ms)[0m  [1m[32mINSERT INTO "ads" ("title", "description", "price", "status", "created_at", "updated_at", "category_id", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Calça Jeans 38"], ["description", "Calça jeans escura tamanho 38."], ["price", 30.0], ["status", 1], ["created_at", "2018-06-28 22:23:14.127304"], ["updated_at", "2018-06-28 22:23:14.127304"], ["category_id", "1"], ["user_id", 3]]
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/ads/2
+Completed 302 Found in 148ms (ActiveRecord: 30.7ms)
+
+
+Started GET "/ads/2" for 127.0.0.1 at 2018-06-28 19:23:14 -0300
+Processing by AdsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAd Load (0.6ms)[0m  [1m[34mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ads/show.html.erb within layouts/application
+  Rendered ads/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.4ms)
+Completed 200 OK in 64ms (Views: 48.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:23:16 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.6ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:23:19 -0300
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."user_id" = 3[0m
+  Rendered ads/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:23:23 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.3ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:23:32 -0300
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."user_id" = 3[0m
+  Rendered ads/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-28 19:23:48 -0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iNSCwJ2GOHjoqFoP8Q+ROvpvaZerRutYPv5Mrf6rGhtyQNXCFV8KBtVh71Jt+sd7U6PIQcJKi0W+9O4LYQc3rA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:23:48 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-28 19:23:50 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-28 19:23:55 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cMP9dHfPR/6FIYJSbDEf05WlWJkufyQFbulVC4V0ES8Vfn7dwI/X5oX/osEq45vAXJ8Qqc6jbrzYsRq+ffeRrQ==", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-06-28 22:23:56.027633"], ["last_sign_in_at", "2018-06-28 22:21:50.792216"], ["sign_in_count", 3], ["updated_at", "2018-06-28 22:23:56.028590"], ["id", 2]]
+  [1m[35m (32.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 155ms (ActiveRecord: 33.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:23:56 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.6ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2018-06-28 19:23:57 -0300
+Processing by AdsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ads/index.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."user_id" = 2[0m
+  Rendered ads/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:23:59 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.7ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  Rendered ads/homepage.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.0ms)
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:37:54 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (18.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (19.6ms)
+Completed 200 OK in 220ms (Views: 203.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/ads/homepage?category_id=2" for 127.0.0.1 at 2018-06-28 19:37:57 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"2"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "2"]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.3ms)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/ads/homepage?category_id=1" for 127.0.0.1 at 2018-06-28 19:37:58 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"1"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "1"]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (3.4ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ads/homepage?category_id=2" for 127.0.0.1 at 2018-06-28 19:38:00 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"2"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "2"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (18.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.3ms)
+Completed 200 OK in 54ms (Views: 49.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/ads/homepage?category_id=1" for 127.0.0.1 at 2018-06-28 19:38:01 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"1"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "1"]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (9.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.5ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:38:02 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (1.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.4ms)
+Completed 200 OK in 54ms (Views: 49.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:38:08 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Afz3wanN31tBv5M9MH7k1yTCki0+UnSxX5rpQGO7WplLIgNZNHNZ5FiBNX4l6e9mz01o1MvEkciJN/KfmuRBaQ==", "search_term"=>"Iphone", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '''%IPHONE%''')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.9ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:02 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (17.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (20.0ms)
+Completed 200 OK in 213ms (Views: 196.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/ads/homepage?category_id=1" for 127.0.0.1 at 2018-06-28 19:40:04 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"1"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (2.0ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "1"]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (11.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.2ms)
+Completed 200 OK in 67ms (Views: 60.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/ads/homepage?category_id=2" for 127.0.0.1 at 2018-06-28 19:40:05 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"2"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "2"]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.7ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:08 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"erIu26UznkIN19SIEF2eruJ3krWz10Ks3VugJwQaAXswbNpDOI0Y/RTpcssFypUfCfhoTEZBp9UL9rv4/UUaiw==", "search_term"=>"ihpone", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%IHPONE%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.1ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:11 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VPEH/whcY+Fs4zq4FKDi6bqK/D1am7aPnriJRGT2qhTObSxaV6a303uOlrsBfHFo1TGscwtU8kH6Prka5dhcpA==", "search_term"=>"iphone", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%IPHONE%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (3.0ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:15 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wOHwNNdvit96D+rZtf5nM36hfsxTW47/jFH327Q7zvhafduRiJVe7W1iRtqgIvSyERouggKUyjHo18eFNRU4SA==", "search_term"=>"calça", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%CALçA%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (3.7ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:20 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H1R5p4MOleF4zNLtf+c6007c42qWy7slQDm7TkL9kVWFyFIC3PRB02+hfu5qO6lSIWezJMcE/+skv4sQw9Nn5Q==", "search_term"=>"jeans", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%JEANS%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.4ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:24 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TnbRDP6St7/Y3vKwe6ADsz5G33vzW+7Ltkn7LH4b5iLU6vqpoWhjjc+zXrNufJAyUf2PNaKUqgXSz8ty/zUQkg==", "search_term"=>"calça", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%CALçA%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.9ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:27 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4sRI4O3HBX2PAk+BfBonpa0ZAkoOg9bsw/YyvvH7Lv5FzqG3E3IJ+FRpT0QLPsf+Q80R3n1S5XXieiUeukaCw==", "search_term"=>"Calça", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%CALçA%')[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.3ms)
+Completed 200 OK in 45ms (Views: 39.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:30 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W5VQZw2WvH+zhkRsxScfDBwqPtxfMkAuKssdvY6/5SzBCXvCUmxoTaTr6G/Q+4yNc5Fukg79BOBOTS3jD5ETnA==", "search_term"=>"jeans", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%JEANS%')[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.1ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:40:39 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pJDDzEsDRtrjAYGIX2inY+NR9QU9gBq/ISGYYgHZCKI+DOhpFPmS6PRsLYtKtDTijOqlS2xPXnFFp6g8gPf+Eg==", "search_term"=>"Calça", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (UPPER(ads.title) like '%CALçA%')[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.0ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:41:23 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (17.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (20.0ms)
+Completed 200 OK in 211ms (Views: 195.0ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:41:26 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K0RmrYSL95purO+gXn7G63PQcdgpNI1qrLiyz/rNMkyx2E0I23EjqHnBQ6NLolVqHGshlnj7yaTIPoKRe+PE/A==", "search_term"=>"calça", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%CALçA%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.5ms)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:41:39 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"491qQa3efNNWq0trt77cgkM34GirfDQ5nZqRBNbRLXJ5QUHk8iSo4UHG52iiYk8DLIywJvqzcPf5HKFaV//bwg==", "search_term"=>"iphone", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%IPHONE%')[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.8ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:42:23 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (18.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (20.7ms)
+Completed 200 OK in 220ms (Views: 203.6ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:42:27 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aO0xDzCUNAKuBXy56YG1Ww6RHHnLEUKeJnf4JpfvaWTycRqqb27gMLlo0Lr8XSbaYSpMN5reBlBC8ch4FsGf1A==", "search_term"=>"iphone", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%iphone%')[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.3ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:42:34 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CrKvEQ4lAubpiRmemk188IWPI9OthFco6uQBgpGVsamQLoS0Ud/W1P7ktZ2Pke9x6jRznfxLE+aOYjHcELtHGQ==", "search_term"=>"Iphone", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%iphone%')[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.7ms)
+Completed 200 OK in 49ms (Views: 43.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:42:38 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+vjkchyr8yRG7cOiLR2jeJQ3V/ktxZGTYgUOShXFlFFgZM/XQ1EnFlGAb6E4wTD5+4wHt3wK1V0Ggz4UlOti4Q==", "search_term"=>"calça", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%calça%')[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (8.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.5ms)
+Completed 200 OK in 59ms (Views: 53.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:42:41 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bPppJAx7ctRqOppNG6dblabFhWtMS+7e5zuO0haA5Xf2ZkKBU4Gm5n1XNk4Oe8gUyX7VJR2EqhCDvb6Ml64Txw==", "search_term"=>"38", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%38%')[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.5ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:42:43 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gOlis8cho2I+AtTAPdDUfgfxzuytbIRwt6fmZqEPUpsadUkWmNt3UClveMMoDEf/aEqeovyjwL7TIdY4ICGkKw==", "search_term"=>"8", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%8%')[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (3.1ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/ads/homepage" for 127.0.0.1 at 2018-06-28 19:42:46 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oIxy6hPgEZ6QsCpM84c0lM0x3cjw/hXFICdMClmQdxY6EFlPTBrFrIfdhk/mW6cVooqNhqExUQtEoXxU2L6Bpg==", "search_term"=>"calça", "commit"=>"Buscar"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE (LOWER(ads.title) like '%calça%')[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (9.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.1ms)
+Completed 200 OK in 51ms (Views: 45.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/ads/homepage?category_id=1" for 127.0.0.1 at 2018-06-28 19:42:59 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"1"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (1.2ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "1"]]
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.8ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ads/homepage?category_id=2" for 127.0.0.1 at 2018-06-28 19:43:00 -0300
+Processing by AdsController#homepage as HTML
+  Parameters: {"category_id"=>"2"}
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "ads".* FROM "ads" WHERE "ads"."category_id" = $1[0m  [["category_id", "2"]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.1ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-28 19:43:01 -0300
+Processing by AdsController#homepage as HTML
+  Rendering ads/homepage.html.erb within layouts/application
+  [1m[36mAd Load (0.8ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered ads/homepage.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.2ms)
+Completed 200 OK in 47ms (Views: 42.8ms | ActiveRecord: 2.0ms)
+
+

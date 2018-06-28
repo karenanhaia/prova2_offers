@@ -34,7 +34,10 @@
           <h3 class="panel-title">Pesquisar Anúncio</h3>
         </div>
         <div class="panel-body">
-
+          <%= form_tag("/ads/homepage", method: "post") do %>
+            <%= text_field_tag(:search_term) %>
+            <%= submit_tag("Buscar") %>
+          <% end %>
         </div>
       </div>
 
@@ -44,7 +47,9 @@
         </div>
         <div class="panel-body">
           <ul>
-
+            <% Category.all.each do |category| %>
+              <li><%= link_to category.description, homepage_ads_path(category_id: category.id) %></li>
+            <% end %>
           </ul>
         </div>
       </div>
