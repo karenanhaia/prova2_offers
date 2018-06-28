@@ -1,33 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h1>Anúncios</h1>
+<%= link_to 'Novo Anúncio', new_ad_path, :class => "btn btn-success" %>
+<br><br>
 
-<h1>Ads</h1>
-
-<table>
+<table class="table">
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Título</th>
+    <th>Descrição</th>
+    <th>Preço</th>
+    <th>Situação</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @ads.each do |ad| %>
-      <tr>
-        <td><%= ad.title %></td>
-        <td><%= ad.description %></td>
-        <td><%= ad.price %></td>
-        <td><%= ad.status %></td>
-        <td><%= link_to 'Show', ad %></td>
-        <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-        <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @ads.each do |ad| %>
+    <tr>
+      <td><%= ad.title %></td>
+      <td><%= truncate(ad.description, length:50) %></td>
+      <td><%= ad.price %></td>
+      <td><%= ad.status %></td>
+      <td>
+        <div class="btn-group">
+          <%= link_to 'Mostrar', ad, :class => "btn btn-info" %></button>
+          <%= link_to 'Editar', edit_ad_path(ad), :class => "btn btn-warning" %>
+          <%= link_to 'Excluir', ad, :class => "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %></button>
+        </div>
+      </td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Ad', new_ad_path %>

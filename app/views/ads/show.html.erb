@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-3">
 
 <p>
   <strong>Title:</strong>
@@ -20,5 +20,6 @@
   <%= @ad.status %>
 </p>
 
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
-<%= link_to 'Back', ads_path %>
+  <%= link_to 'Editar', edit_ad_path(@ad), :class => "btn btn-warning" %>
+  <%= link_to 'Voltar', ads_path, :class => "btn btn-primary" %>
+</div>

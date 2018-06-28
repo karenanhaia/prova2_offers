@@ -11,27 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :ad_title %>
+  <div class="field form-group">
+    <label>Título</label>
+    <%= form.text_field :title, id: :ad_title, :class => "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :ad_description %>
+    <label>Descrição</label>
+    <%= form.text_area :description, id: :ad_description, :class => "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :ad_price %>
+    <label>Preço</label>
+    <%= form.text_field :price, id: :ad_price, :class => "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <label>Categoria</label>
+    <%= form.select :category_id, Category.all.collect {|category| [category.description, category.id]}, :class => "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status, id: :ad_status %>
+    <label>Situação</label>
+    <%= form.number_field :status, id: :ad_status, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit submit_name, :class => "btn btn-success" %>
   </div>
 <% end %>

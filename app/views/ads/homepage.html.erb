@@ -1,1 +1,54 @@
-<p>Homepage</p>
+<div class="container-fluid">
+  <div class="row homepage">
+    <div class="col-md-7">
+      <% @ads.each do |ad| %>
+        <div class="panel panel-default">
+          <div class="row">
+            <div class="col-md-12">
+              FOTOS
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <p><%= ad.title %></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <p><%= ad.description %></p>
+            </div>
+            <div class="col-md-4">
+              <p><%= ad.price %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-4 col-md-offset-1">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Pesquisar Anúncio</h3>
+        </div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Categorias</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
