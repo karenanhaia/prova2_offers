@@ -1,5 +1,7 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:homepage, :show]
+  load_and_authorize_resource :except => [:homepage, :show]
 
   # GET /ads
   # GET /ads.json
@@ -12,7 +14,7 @@ class AdsController < ApplicationController
     @ads = Ad.all
 
     @ads = @ads.where(category_id: params[:category_id]).distinct unless params[:category_id].blank?
-    @ads = @ads.where("LOWER(ads.title) like ?", "%#{params[:search_term].to_s.downcase}%").distinct unless params[:search_term].blank?
+    @ads = @ads.where("LOWER(ads.title) like ? OR LOWER(ads.description) like ? ", "%#{params[:search_term].to_s.downcase}%", "%#{params[:search_term].to_s.downcase}%").distinct unless params[:search_term].blank?
   end
 
   # GET /ads/1

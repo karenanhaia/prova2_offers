@@ -28,5 +28,10 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    user ||= User.new # guest user (not logged in)
+
+    can :manage, Ad do |ad|
+      ad.new_record? or ad.user == user
+    end
   end
 end
