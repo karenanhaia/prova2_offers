@@ -36,6 +36,11 @@
     <%= form.number_field :status, id: :ad_status, :class => "form-control" %>
   </div>
 
+  <div class="field">
+    <label>Fotos</label>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit submit_name, :class => "btn btn-success" %>
   </div>

@@ -1,5 +1,9 @@
 <div class="col-md-3">
 
+<% @ad.images.each do |img| %>
+  <%= image_tag (img.thumb.url) unless img.file.nil? %>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @ad.title %>
