@@ -11,7 +11,7 @@ class AdsController < ApplicationController
   end
 
   def homepage
-    @ads = Ad.all
+    @ads = Ad.all.order(:title)
 
     @ads = @ads.where(category_id: params[:category_id]).distinct unless params[:category_id].blank?
     @ads = @ads.where("LOWER(ads.title) like ? OR LOWER(ads.description) like ? ", "%#{params[:search_term].to_s.downcase}%", "%#{params[:search_term].to_s.downcase}%").distinct unless params[:search_term].blank?

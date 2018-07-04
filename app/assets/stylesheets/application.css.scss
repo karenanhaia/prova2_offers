@@ -29,6 +29,10 @@ a {
   color: #FFF !important;
 }
 
+.panel a, .panel a:focus, .panel a:active, .panel a:visited {
+  color: #333 !important;
+}
+
 .navbar a {
   color: #777 !important;
   font-size: 14px !important;
