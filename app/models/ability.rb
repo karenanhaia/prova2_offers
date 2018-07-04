@@ -33,5 +33,6 @@ class Ability
     can :manage, Ad do |ad|
       ad.new_record? or ad.user == user
     end
+
   end
 end
