@@ -21,12 +21,12 @@
   background: #F7F7F7;
 }
 
-a {
-  color: #FFF !important;
+.panel-ad {
+  background: #FFF;
 }
 
-.panel a, .panel a:focus, .panel a:active, .panel a:visited {
-  color: #333 !important;
+a {
+  color: #FFF !important;
 }
 
 .navbar a {
@@ -38,14 +38,25 @@ a {
   margin-left: 10px !important;
 }
 
-mark {
-  background: #FFFF77;
-}
-
-.logo {
-  height: 120px;
-}
-
 .homepage {
   margin: 0 20px;
+}
+
+.ad-title {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.ad-button {
+  margin-top: 3px;
+}
+
+.ad-price {
+  color: #22AA22;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+.nav-links {
+  margin: 18px 10px 0 10px;
 }

@@ -4,26 +4,27 @@
         <div class="row">
           <% group.each do |ad| %>
             <div class="col-md-4">
-              <div class="panel panel-default">
+              <div class="panel panel-default panel-ad">
                 <div class="row">
                   <div class="col-md-12">
-                    FOTOS
+                    <% if (!ad.images.blank?) %>
+                            <%= image_tag ad.images.first.thumb.url %>
+                    <% end %>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-12">
-                    <p><%= ad.title %></p>
+                    <p class="ad-title"><%= ad.title %></p>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6">
-                    <p><%= ad.description %></p>
-                    <%= link_to 'Mostrar', ad, :class => "btn btn-info" %></button>
+                    <p class="ad-price">R$ <%= ad.price %></p>
                   </div>
                   <div class="col-md-4">
-                    <p><%= ad.price %></p>
+                    <%= link_to 'Detalhes', ad, :class => "btn btn-primary ad-button" %></button>
                   </div>
                 </div>
               </div>
